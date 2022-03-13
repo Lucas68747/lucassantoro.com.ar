@@ -1,0 +1,127 @@
+* {
+    margin:  0;
+    padding: 0;
+  }
+
+/* Banner */
+
+.section-one {
+    width: 100%;
+    background-size: contain;
+    background-image: url(img/banner.jpg);
+    padding: 20px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+}
+
+/* Skills and Tools */
+
+.section-two {
+    width: 100%;
+    padding: 20px;
+    margin-top: 30px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Project presentation */
+
+.section-three {
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Profile */
+
+#profile {
+    width: 150px;
+    border-radius: 50%;
+}
+
+/* Body Style */
+
+body {
+    background-color: #fff;
+background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
+}
+ 
+/* Projects in order */
+
+ .projects{
+    width: 85%;
+    min-width: 250px;
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+/* Projects title */
+
+ .projects .title{
+    font-size: 3em;
+    color: #444;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Projects description */
+
+.projects .description{
+    font-weight: 300;
+    color: #333;
+    font-size: 1.1em;
+    margin-bottom: 100px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.projects .project-description{
+    width: 100%;
+    padding: 20px;
+    background: rgb(235,235,235);
+    margin-bottom: 50px;
+    text-align: center;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+}
+
+    .project-description h2{
+        font-size: 1.2em;
+        font-weight: 700;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .project-description p{
+        font-weight: 300;
+    }
+
+    .project-description div{
+        background: #1d3e7b;
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    .project-description div p{
+        display: inline-block;
+        margin: 0px 20px;
+    }
+    
+    .project-description div p a{
+        color: #fff;
+    }
+
+/* Certificates */
+
+    .My {
+        text-align: center;
+        padding: 4%;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+
+ 
+  
