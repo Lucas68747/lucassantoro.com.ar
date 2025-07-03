@@ -1,88 +1,130 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Lucas Emanuel Santoro</title>
-        <meta charset="utf-8" lang="en"/>
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="styles.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap" rel="stylesheet" />
-        <link rel="icon" href="icons/codificacion.png" type="image/png" />
-    </head>
-    <body>
-        
-        <!-- Banner -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lucas Emanuel Santoro</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="icons/circle.png" type="image/png" />
+</head>
 
-        <div class="section-one">
-            <img src="img/profile.jpg" alt="profile" id="profile"/>
-            <h2>Lucas Emanuel Santoro</h2>
-            <p>Junior Autodidact</p>
-        </div>
+<body>
 
-        <!-- Skills and Tools -->
+  <!-- Banner -->
+  <div class="section-one">
+    <img src="img/opción-2.jpeg" alt="profile" id="profile" />
+    <h2>Lucas Emanuel Santoro</h2>
+    <p>Junior Enthusiast</p>
+  </div>
 
-        <div class="section-two">
-            <h2>Skills and Tools</h2>
-            <p>The skills and tools with which I perform on a daily basis.</p>
-            <br />
-            <div class="icons">
-            <img src="icons/python.png" alt="python" />
-            &nbsp;
-            <img src="icons/microsoftexcel.png" alt="excel" />
-            &nbsp;
-            <img src="icons/github.png" alt="github" />
-            &nbsp;
-            <img src="icons/visualstudiocode.png" alt="visualstudiocode" />
-            &nbsp;
-            <img src="icons/linux.png" alt="linux" />
-        </div>
-        </div>
+  <!-- Skills and Tools -->
+  <div class="section-two">
+    <h2>Skills and Tools</h2>
+    <p>These are the tools and skills I use to perform and prepare myself daily.</p>
+    <br />
+    <div class="icons">
+      <img src="icons/aws.svg" alt="aws" />
+      <img src="icons/docker.svg" alt="docker" />
+      <img src="icons/git.svg" alt="git" />
+      <img src="icons/python.svg" alt="python" />
+      <img src="icons/linux.svg" alt="linux" />
+    </div>
+  </div>
 
-        <!-- Projects presentation -->
+  <!-- Projects presentation -->
+  <div class="section-three">
+    <h2>Check my repositories</h2>
+    <br />
+    <p>These are my personal projects.</p>
+  </div>
 
-        <div class="section-three">
-            <h2>Check my repositories</h2>
-            <br />
-            <p>These are my little projects.</p>
+  <!-- Projects -->
+  <section class="projects">
+    <div class="project-description">
+      <h2>IngresosApp</h2>
+      <p>CRUD project. Personal data entry app. Created for private property entry, written in Python with SQLite.</p>
+      <div>
+        <p><a target="_blank" href="https://github.com/Lucas68747/IngresosApp" title="">IngresosApp</a></p>
+      </div>
+    </div>
 
-        </div>
+    <div class="project-description">
+      <h2>IngresosApp Web</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis veniam repudiandae tempora.</p>
+      <div>
+        <p><a target="_blank" href="#" title="">#</a></p>
+      </div>
+    </div>
 
-        <!-- Projects in order -->
+    <div class="project-description">
+      <h2></h2>
+      <p></p>
+      <div>
+        <p><a target="_blank" href="#" title=""></a></p>
+        <p><a target="_blank" href="#" title=""></a></p>
+      </div>
+    </div>
+  </section>
 
-        <section class="projects">
-            <div class="project-description">
-                <h2>first steps</h2>
-                <p>structure and web design.</p>
-                <div>
-                    <p><a target="_blank" href="https://lucas68747.github.io/Pet_Sematary_Tribute/" title="">Pet Sematary Tribute</a></p>
-                </div>
-            </div>
-            <div class="project-description">
-                <h2>CRUD project.</h2>
-                <p>desktop app with Python and Sqlite</p>
-                <div>
-                    <p><a target="_blank" href="https://github.com/Lucas68747/CRUD-App" title="">CRUD-App</a></p>
-                </div>
-            </div>
-            <div class="project-description">
-                <h2></h2>
-                <p></p>
-                <div>
-                    <p><a target="_blank" href="#" title=""></a></p>
-                    <p><a target="_blank" href="#" title=""></a></p>
-                </div>
-            </div>
-        </section>
+  <!-- About me with button -->
+  <section class="My">
+    <h2>About me</h2>
+    <button id="toggle-lang">ES</button>
+    <br /><br />
+    <div id="about-text">
+      <p>I’m 27 and focused on practical cloud solutions. My learning path revolves around deploying, managing, and securing cloud services, aiming to grow as a junior Cloud Administrator or Engineer.</p>
+      <p>Currently improving my English skills through daily practice.</p>
+    </div>
+  </section>
 
-        <!-- About Me -->
+  <!-- Footer -->
+  <footer>
+    <p>Find me on:</p>
+    <div class="social-icons">
+      <a href="https://github.com/Lucas68747" target="_blank" title="GitHub">
+        <img src="icons/github.svg" alt="GitHub" />
+      </a>
+      <a href="https://www.linkedin.com/in/tuusuario" target="_blank" title="LinkedIn">
+        <img src="icons/linkedin.svg" alt="LinkedIn" />
+      </a>
+      <a href="mailto:lucas68747@gmail.com" title="Email">
+        <img src="icons/email.svg" alt="Email" />
+      </a>
+    </div>
+    <p>&copy; 2025 Lucas Emanuel Santoro</p>
+  </footer>
 
-        <section class="My">
-            <h2>About me</h2>
-            <br />
-            <div>
-                <p>I'm 24 years old. I am characterized by the enthusiasm of learning every day and I try to transmit this energy in everything I do.</p> 
-                <p>My main objective is to grow always trying to pursue my best version as a person and as a professional. </p>
-            </div>
-        </section>    
-        </body>
+  <!-- Toggle Script JS -->
+  <script>
+    const toggleBtn = document.getElementById('toggle-lang');
+    const aboutText = document.getElementById('about-text');
+
+    const enContent = `
+      <p>I’m 27 and focused on practical cloud solutions. My learning path revolves around deploying, managing, and securing cloud services, aiming to grow as a junior Cloud Administrator or Engineer.</p>
+      <p>Currently improving my English skills through daily practice.</p>
+    `;
+
+    const esContent = `
+      <p>Tengo 27 años y estoy enfocado en soluciones prácticas en la nube. Mi ruta de aprendizaje gira en torno a desplegar, administrar y asegurar servicios en la nube, con el objetivo de crecer como Cloud Administrator o Cloud Engineer junior.</p>
+      <p>Actualmente estoy mejorando mi nivel de inglés mediante práctica diaria.</p>
+    `;
+
+    let currentLang = 'en';
+
+    toggleBtn.addEventListener('click', () => {
+      if (currentLang === 'en') {
+        aboutText.innerHTML = esContent;
+        toggleBtn.textContent = 'EN';
+        currentLang = 'es';
+      } else {
+        aboutText.innerHTML = enContent;
+        toggleBtn.textContent = 'ES';
+        currentLang = 'en';
+      }
+    });
+  </script>
+
+</body>
 </html>
+
