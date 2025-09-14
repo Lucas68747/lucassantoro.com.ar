@@ -15,13 +15,18 @@
   <div class="section-one">
     <img src="img/opción-2.jpeg" alt="profile" id="profile" />
     <h2>Lucas Emanuel Santoro</h2>
-    <p>Junior Enthusiast</p>
+    <p data-i18n="banner_role">Junior Enthusiast</p>
+  </div>
+
+  <!-- Translate Button -->
+  <div style="display:flex; justify-content:flex-end; padding:8px 12px;">
+    <button id="toggle-lang">ES</button>
   </div>
 
   <!-- Skills and Tools -->
   <div class="section-two">
-    <h2>Skills and Tools</h2>
-    <p>These are the tools and skills I use to perform and prepare myself daily.</p>
+    <h2 data-i18n="skills_title">Skills and Tools</h2>
+    <p data-i18n="skills_desc">These are the tools and skills I use to perform and prepare myself daily.</p>
     <br />
     <div class="icons">
       <img src="icons/aws.svg" alt="aws" />
@@ -34,16 +39,16 @@
 
   <!-- Projects presentation -->
   <div class="section-three">
-    <h2>Check my repositories</h2>
+    <h2 data-i18n="projects_title">Check my repositories</h2>
     <br />
-    <p>These are my personal projects.</p>
+    <p data-i18n="projects_intro">These are my personal projects.</p>
   </div>
 
   <!-- Projects -->
   <section class="projects">
     <div class="project-description">
       <h2>IngresosApp</h2>
-      <p>CRUD project. Personal data entry app. Created for private property entry, written in Python with SQLite.</p>
+      <p data-i18n="proj1_desc">CRUD project. Personal data entry app. Created for private property entry, written in Python with SQLite.</p>
       <div>
         <p><a target="_blank" href="https://github.com/Lucas68747/IngresosApp" title="">IngresosApp</a></p>
       </div>
@@ -51,8 +56,7 @@
 
     <div class="project-description">
       <h2><a href="https://www.ingresosapp.com.ar/">www.ingresosapp.com.ar</a></h2>
-      <p>Website created as a complement to IngresosApp, a desktop application developed in Python.
-The purpose of the website is to provide a download point for the app and show an example of deployment on a cloud server.</p>
+      <p data-i18n="proj2_desc">Website created as a complement to IngresosApp, a desktop application developed in Python.</p>
       <div>
         <p><a target="_blank" href="https://github.com/Lucas68747/IngresosApp-Web" title="">IngresosApp-Web</a></p>
       </div>
@@ -68,19 +72,18 @@ The purpose of the website is to provide a download point for the app and show a
     </div>
   </section>
 
-  <!-- About me with button -->
+  <!-- About me -->
   <section class="My">
-    <h2>About me</h2>
-    <button id="toggle-lang">ES</button>
+    <h2 data-i18n="about_title">About me</h2>
     <br /><br />
-    <div id="about-text">
-      <p>Estoy trabajando en proyectos personales con Python, Docker y AWS para adquirir experiencia práctica en la nube. Mi objetivo es crecer como Cloud Administrator o Cloud Engineer Junior y continuar ampliando mis habilidades técnicas mientras me preparo para mi primera oportunidad profesional en sistemas.</p>
+    <div id="about-text" data-i18n="about_text">
+      <p>I'm working on personal projects with Python, Docker, and AWS to gain practical experience in the cloud. My goal is to grow as a Cloud Administrator or Junior Cloud Engineer and continue expanding my technical skills while preparing for my first career opportunity in IT.</p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>Find me on:</p>
+    <p data-i18n="footer_findme">Find me on:</p>
     <div class="social-icons">
       <a href="https://github.com/Lucas68747" target="_blank" title="GitHub">
         <img src="icons/github.svg" alt="GitHub" />
@@ -95,28 +98,62 @@ The purpose of the website is to provide a download point for the app and show a
     <p>&copy; 2025 Lucas Emanuel Santoro</p>
   </footer>
 
-  <!-- Toggle Script JS -->
+  <!-- Translate script JS -->
   <script>
+    const translations = {
+      en: {
+        banner_role: "Junior Enthusiast",
+        skills_title: "Skills and Tools",
+        skills_desc: "These are the tools and skills I use to perform and prepare myself daily.",
+        projects_title: "Check my repositories",
+        projects_intro: "These are my personal projects.",
+        proj1_desc: "CRUD project. Personal data entry app. Created for private property entry, written in Python with SQLite.",
+        proj2_desc: "Website created as a complement to IngresosApp, a desktop application developed in Python.",
+        about_title: "About me",
+        about_text: "I'm working on personal projects with Python, Docker, and AWS to gain practical experience in the cloud. My goal is to grow as a Cloud Administrator or Junior Cloud Engineer and continue expanding my technical skills while preparing for my first career opportunity in IT.",
+        footer_findme: "Find me on:"
+      },
+      es: {
+        banner_role: "Junior Enthusiast",
+        skills_title: "Habilidades y Herramientas",
+        skills_desc: "Estas son las herramientas y habilidades que uso para rendir y prepararme a diario.",
+        projects_title: "Mirá mis repositorios",
+        projects_intro: "Estos son mis proyectos personales.",
+        proj1_desc: "Proyecto CRUD. App de registro de ingresos. Creada para el acceso a propiedad privada, escrita en Python con SQLite.",
+        proj2_desc: "Sitio web creado como complemento de IngresosApp, una aplicación de escritorio desarrollada en Python.",
+        about_title: "Sobre mí",
+        about_text: "Estoy trabajando en proyectos personales con Python, Docker y AWS para adquirir experiencia práctica en la nube. Mi objetivo es crecer como Cloud Administrator o Cloud Engineer Junior y continuar ampliando mis habilidades técnicas mientras me preparo para mi primera oportunidad profesional en sistemas.",
+        footer_findme: "Encontrame en:"
+      }
+    };
+
+    // Helper: aplica traducciones a todos los elementos con data-i18n
+    function applyTranslations(lang) {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        const text = translations[lang] && translations[lang][key];
+        if (typeof text === "string" && text.length > 0) {
+          el.innerHTML = text;
+        }
+        // Si está vacío o no existe, no toca el contenido original (conserva el DOM actual)
+      });
+    }
+
+    // Estado inicial
+    let currentLang = 'en'; // El botón arranca mostrando 'ES' (para cambiar a español)
     const toggleBtn = document.getElementById('toggle-lang');
-    const aboutText = document.getElementById('about-text');
 
-    const enContent = `
-      <p>I'm working on personal projects with Python, Docker, and AWS to gain practical experience in the cloud. My goal is to grow as a Cloud Administrator or Junior Cloud Engineer and continue expanding my technical skills while preparing for my first career opportunity in IT.</p>
-    `;
+    // Set label inicial del botón
+    toggleBtn.textContent = 'ES';
 
-    const esContent = `
-      <p>Estoy trabajando en proyectos personales con Python, Docker y AWS para adquirir experiencia práctica en la nube. Mi objetivo es crecer como Cloud Administrator o Cloud Engineer Junior y continuar ampliando mis habilidades técnicas mientras me preparo para mi primera oportunidad profesional en sistemas.</p>
-    `;
-
-    let currentLang = 'en';
-
+    // Click: alterna idioma y etiqueta del botón
     toggleBtn.addEventListener('click', () => {
       if (currentLang === 'en') {
-        aboutText.innerHTML = esContent;
+        applyTranslations('es');
         toggleBtn.textContent = 'EN';
         currentLang = 'es';
       } else {
-        aboutText.innerHTML = enContent;
+        applyTranslations('en');
         toggleBtn.textContent = 'ES';
         currentLang = 'en';
       }
@@ -125,4 +162,5 @@ The purpose of the website is to provide a download point for the app and show a
 
 </body>
 </html>
+
 
