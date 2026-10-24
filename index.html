@@ -1,166 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-AR">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lucas Emanuel Santoro</title>
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap" rel="stylesheet" />
+  <meta name="description" content="Portfolio de Lucas Emanuel Santoro: proyectos personales con Python, AWS e infraestructura cloud." />
+  <meta name="theme-color" content="#0e1623" />
   <link rel="icon" href="icons/circle.png" type="image/png" />
+
+  <!-- El banner se pide antes que el CSS y las fuentes -->
+  <link rel="preload" as="image" type="image/webp" href="img/banner-1200.webp" media="(max-width: 700px)" fetchpriority="high" />
+  <link rel="preload" as="image" type="image/webp" href="img/banner-2400.webp" media="(min-width: 701px)" fetchpriority="high" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
   <!-- Banner -->
-  <div class="section-one">
-    <img src="img/opción-2.jpeg" alt="profile" id="profile" />
-    <h2>Lucas Emanuel Santoro</h2>
-    <p data-i18n="banner_role">Junior Enthusiast</p>
-  </div>
+  <header class="hero">
+    <picture class="hero-bg">
+      <source media="(max-width: 700px)" srcset="img/banner-1200.webp" type="image/webp" />
+      <source srcset="img/banner-2400.webp" type="image/webp" />
+      <img src="img/banner-2400.jpg" alt="" width="2400" height="1005" fetchpriority="high" decoding="async" />
+    </picture>
 
-  <!-- Translate Button -->
-  <div style="display:flex; justify-content:flex-end; padding:8px 12px;">
-    <button id="toggle-lang">ES</button>
-  </div>
-
-  <!-- Skills and Tools -->
-  <div class="section-two">
-    <h2 data-i18n="skills_title">Skills and Tools</h2>
-    <p data-i18n="skills_desc">These are the tools and skills I use to perform and prepare myself daily.</p>
-    <br />
-    <div class="icons">
-      <img src="icons/aws.svg" alt="aws" />
-      <img src="icons/docker.svg" alt="docker" />
-      <img src="icons/git.svg" alt="git" />
-      <img src="icons/python.svg" alt="python" />
-      <img src="icons/linux.svg" alt="linux" />
+    <div class="hero-content">
+      <picture>
+        <source srcset="img/profile-320.webp" type="image/webp" />
+        <img src="img/profile-320.jpg" alt="Foto de Lucas Emanuel Santoro" class="profile" width="160" height="160" fetchpriority="high" />
+      </picture>
+      <h1>Lucas Emanuel Santoro</h1>
     </div>
-  </div>
+  </header>
 
-  <!-- Projects presentation -->
-  <div class="section-three">
-    <h2 data-i18n="projects_title">Check my repositories</h2>
-    <br />
-    <p data-i18n="projects_intro">These are my personal projects.</p>
+  <!-- Selector de idioma: retirado temporalmente (ver script comentado al final)
+  <div class="lang-switch">
+    <button id="toggle-lang" type="button">EN</button>
   </div>
+  -->
 
-  <!-- Projects -->
-  <section class="projects">
-    <div class="project-description">
-      <h2>IngresosApp</h2>
-      <p data-i18n="proj1_desc">CRUD project. Personal data entry app. Created for private property entry, written in Python with SQLite.</p>
-      <div>
-        <p><a target="_blank" href="https://github.com/Lucas68747/IngresosApp" title="">IngresosApp</a></p>
+  <main>
+
+    <!-- Sobre mí -->
+    <section class="section about" aria-labelledby="about-title">
+      <div class="container narrow">
+        <h2 id="about-title" class="section-title" data-i18n="about_title">Sobre mí</h2>
+        <div class="about-text">
+          <p data-i18n="about_p1">Aprendo tecnología construyendo cosas. La mayor parte de lo que sé viene de proyectos personales: tomo un problema real, armo una solución que funcione, la documento y la sigo mejorando a medida que aprendo.</p>
+          <p data-i18n="about_p2">Hoy estoy enfocado en Python, AWS e infraestructura sobre Linux: desplegar y mantener mis propios servicios, y aprender en el camino las herramientas que los rodean, como Git y Docker.</p>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="project-description">
-      <h2><a href="https://www.ingresosapp.com.ar/">www.ingresosapp.com.ar</a></h2>
-      <p data-i18n="proj2_desc">Website created as a complement to IngresosApp, a desktop application developed in Python.</p>
-      <div>
-        <p><a target="_blank" href="https://github.com/Lucas68747/IngresosApp-Web" title="">IngresosApp-Web</a></p>
+    <!-- Proyectos -->
+    <section class="section projects" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="projects-title" class="section-title" data-i18n="projects_title">Proyectos</h2>
+          <p class="section-intro" data-i18n="projects_intro">Proyectos personales en los que trabajé o estoy trabajando. El código y la documentación de cada uno están en GitHub.</p>
+        </header>
+
+        <div class="project-grid">
+
+          <!-- zomboid-cloud-project -->
+          <article class="project-card">
+            <div class="project-media project-media--placeholder" aria-hidden="true">
+              <span>zomboid-cloud-project</span>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="status status--progress" data-i18n="status_progress">En desarrollo</span>
+              </div>
+              <h3 class="project-title">zomboid-cloud-project</h3>
+              <!-- Descripción y tecnologías: pendientes, a completar cuando el repositorio sea público.
+              <p class="project-desc"></p>
+              <p class="project-tech"><span class="sr-only">Tecnologías: </span></p>
+              -->
+              <p class="project-desc project-desc--muted" data-i18n="proj_zomboid_note">Repositorio privado por el momento.</p>
+              <!-- Enlace pendiente:
+              <div class="project-actions">
+                <a class="btn" href="https://github.com/Lucas68747/zomboid-cloud-project" target="_blank" rel="noopener">Repositorio<span class="sr-only"> de zomboid-cloud-project en GitHub</span></a>
+              </div>
+              -->
+            </div>
+          </article>
+
+          <!-- IngresosApp-Web -->
+          <article class="project-card">
+            <div class="project-media">
+              <img src="img/projects/ingresosapp-web.webp" alt="Página de inicio de IngresosApp Web, con un carrusel de imágenes y el botón de descarga" width="900" height="600" loading="lazy" decoding="async" />
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="status status--progress" data-i18n="status_progress">En desarrollo</span>
+              </div>
+              <h3 class="project-title">IngresosApp-Web</h3>
+              <p class="project-desc" data-i18n="proj_web_desc">Sitio web de IngresosApp, con la descarga de la aplicación y su historial de versiones. Desplegado en una instancia EC2 de AWS con Linux, Nginx y Gunicorn.</p>
+              <p class="project-tech"><span class="sr-only">Tecnologías: </span>Python · Flask · Bootstrap · AWS EC2 · Nginx</p>
+              <div class="project-actions">
+                <a class="btn" href="https://github.com/Lucas68747/IngresosApp-Web" target="_blank" rel="noopener">
+                  <svg class="btn-icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                  Repositorio<span class="sr-only"> de IngresosApp-Web en GitHub</span>
+                </a>
+                <!-- Sitio fuera de línea (oct. 2026): reactivar cuando vuelva a estar publicado.
+                <a class="btn btn--ghost" href="https://www.ingresosapp.com.ar/" target="_blank" rel="noopener">Sitio web<span class="sr-only"> de IngresosApp</span></a>
+                -->
+              </div>
+            </div>
+          </article>
+
+          <!-- IngresosApp -->
+          <article class="project-card">
+            <div class="project-media">
+              <img src="img/projects/ingresosapp.webp" alt="Ventana de IngresosApp con el formulario de carga y la tabla de ingresos registrados" width="900" height="600" loading="lazy" decoding="async" />
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="status status--done" data-i18n="status_done">Completado</span>
+              </div>
+              <h3 class="project-title">IngresosApp</h3>
+              <p class="project-desc" data-i18n="proj_app_desc">Aplicación de escritorio para registrar los ingresos a un predio privado, como un barrio cerrado o un parque industrial. Permite cargar, editar y eliminar registros y exportarlos a PDF.</p>
+              <p class="project-tech"><span class="sr-only">Tecnologías: </span>Python · Tkinter · SQLite · FPDF</p>
+              <div class="project-actions">
+                <a class="btn" href="https://github.com/Lucas68747/IngresosApp" target="_blank" rel="noopener">
+                  <svg class="btn-icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                  Repositorio<span class="sr-only"> de IngresosApp en GitHub</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="project-description">
-      <h2></h2>
-      <p></p>
-      <div>
-        <p><a target="_blank" href="#" title=""></a></p>
-        <p><a target="_blank" href="#" title=""></a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- About me -->
-  <section class="My">
-    <h2 data-i18n="about_title">About me</h2>
-    <br /><br />
-    <div id="about-text" data-i18n="about_text">
-      <p>I'm working on personal projects with Python, Docker, and AWS to gain practical experience in the cloud. My goal is to grow as a Cloud Administrator or Junior Cloud Engineer and continue expanding my technical skills while preparing for my first career opportunity in IT.</p>
-    </div>
-  </section>
+  </main>
 
   <!-- Footer -->
-  <footer>
-    <p data-i18n="footer_findme">Find me on:</p>
-    <div class="social-icons">
-      <a href="https://github.com/Lucas68747" target="_blank" title="GitHub">
-        <img src="icons/github.svg" alt="GitHub" />
-      </a>
-      <a href="https://www.linkedin.com/in/lucassantoro/" target="_blank" title="LinkedIn">
-        <img src="icons/linkedin.svg" alt="LinkedIn" />
-      </a>
-      <a href="mailto:lucassantoroemanuel@gmail.com" title="Email">
-        <img src="icons/email.svg" alt="Email" />
-      </a>
-    </div>
-    <p>&copy; 2025 Lucas Emanuel Santoro</p>
+  <footer class="site-footer">
+    <p data-i18n="footer_findme">Encontrame en:</p>
+    <ul class="social-icons">
+      <li>
+        <a href="https://github.com/Lucas68747" target="_blank" rel="noopener" title="GitHub">
+          <img src="icons/github.svg" alt="GitHub" width="28" height="28" />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/lucassantoro/" target="_blank" rel="noopener" title="LinkedIn">
+          <img src="icons/linkedin.svg" alt="LinkedIn" width="28" height="28" />
+        </a>
+      </li>
+      <li>
+        <a href="mailto:lucassantoroemanuel@gmail.com" title="Correo electrónico">
+          <img src="icons/email.svg" alt="Correo electrónico" width="28" height="28" />
+        </a>
+      </li>
+    </ul>
+    <p class="copyright">&copy; 2027 Lucas Emanuel Santoro</p>
   </footer>
 
-  <!-- Translate script JS -->
+  <!--
+    Traducción ES/EN: retirada temporalmente de la interfaz.
+    Para reactivarla: descomentar el botón .lang-switch (después del <header>),
+    sus estilos en styles.css y este script.
+    Los textos traducibles conservan su atributo data-i18n.
+
   <script>
     const translations = {
-      en: {
-        banner_role: "Junior Enthusiast",
-        skills_title: "Skills and Tools",
-        skills_desc: "These are the tools and skills I use to perform and prepare myself daily.",
-        projects_title: "Check my repositories",
-        projects_intro: "These are my personal projects.",
-        proj1_desc: "CRUD project. Personal data entry app. Created for private property entry, written in Python with SQLite.",
-        proj2_desc: "Website created as a complement to IngresosApp, a desktop application developed in Python.",
-        about_title: "About me",
-        about_text: "I'm working on personal projects with Python, Docker, and AWS to gain practical experience in the cloud. My goal is to grow as a Cloud Administrator or Junior Cloud Engineer and continue expanding my technical skills while preparing for my first career opportunity in IT.",
-        footer_findme: "Find me on:"
-      },
       es: {
-        banner_role: "Junior Enthusiast",
-        skills_title: "Habilidades y Herramientas",
-        skills_desc: "Estas son las herramientas y habilidades que uso para rendir y prepararme a diario.",
-        projects_title: "Mirá mis repositorios",
-        projects_intro: "Estos son mis proyectos personales.",
-        proj1_desc: "Proyecto CRUD. App de registro de ingresos. Creada para el acceso a propiedad privada, escrita en Python con SQLite.",
-        proj2_desc: "Sitio web creado como complemento de IngresosApp, una aplicación de escritorio desarrollada en Python.",
         about_title: "Sobre mí",
-        about_text: "Estoy trabajando en proyectos personales con Python, Docker y AWS para adquirir experiencia práctica en la nube. Mi objetivo es crecer como Cloud Administrator o Cloud Engineer Junior y continuar ampliando mis habilidades técnicas mientras me preparo para mi primera oportunidad profesional en sistemas.",
+        about_p1: "Aprendo tecnología construyendo cosas. La mayor parte de lo que sé viene de proyectos personales: tomo un problema real, armo una solución que funcione, la documento y la sigo mejorando a medida que aprendo.",
+        about_p2: "Hoy estoy enfocado en Python, AWS e infraestructura sobre Linux: desplegar y mantener mis propios servicios, y aprender en el camino las herramientas que los rodean, como Git y Docker.",
+        projects_title: "Proyectos",
+        projects_intro: "Proyectos personales en los que trabajé o estoy trabajando. El código y la documentación de cada uno están en GitHub.",
+        status_progress: "En desarrollo",
+        status_done: "Completado",
+        proj_zomboid_note: "Repositorio privado por el momento.",
+        proj_web_desc: "Sitio web de IngresosApp, con la descarga de la aplicación y su historial de versiones. Desplegado en una instancia EC2 de AWS con Linux, Nginx y Gunicorn.",
+        proj_app_desc: "Aplicación de escritorio para registrar los ingresos a un predio privado, como un barrio cerrado o un parque industrial. Permite cargar, editar y eliminar registros y exportarlos a PDF.",
         footer_findme: "Encontrame en:"
+      },
+      en: {
+        about_title: "About me",
+        about_p1: "I learn technology by building things. Most of what I know comes from personal projects: I take a real problem, build a solution that works, document it and keep improving it as I learn.",
+        about_p2: "Right now I'm focused on Python, AWS and Linux-based infrastructure: deploying and running my own services, and learning the tools around them along the way, such as Git and Docker.",
+        projects_title: "Projects",
+        projects_intro: "Personal projects I've worked on or am working on. The code and documentation for each one are on GitHub.",
+        status_progress: "In progress",
+        status_done: "Completed",
+        proj_zomboid_note: "Private repository for now.",
+        proj_web_desc: "Website for IngresosApp, with the app download and its version history. Deployed on an AWS EC2 instance with Linux, Nginx and Gunicorn.",
+        proj_app_desc: "Desktop app to log entries to a private property, such as a gated community or an industrial park. It lets you add, edit and delete records and export them to PDF.",
+        footer_findme: "Find me on:"
       }
     };
 
-    // Helper: aplica traducciones a todos los elementos con data-i18n
     function applyTranslations(lang) {
+      document.documentElement.lang = lang === "es" ? "es-AR" : "en";
       document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        const text = translations[lang] && translations[lang][key];
-        if (typeof text === "string" && text.length > 0) {
-          el.innerHTML = text;
-        }
-        // Si está vacío o no existe, no toca el contenido original (conserva el DOM actual)
+        const text = translations[lang] && translations[lang][el.getAttribute("data-i18n")];
+        if (typeof text === "string" && text.length > 0) el.textContent = text;
       });
     }
 
-    // Estado inicial
-    let currentLang = 'en'; // El botón arranca mostrando 'ES' (para cambiar a español)
-    const toggleBtn = document.getElementById('toggle-lang');
-
-    // Set label inicial del botón
-    toggleBtn.textContent = 'ES';
-
-    // Click: alterna idioma y etiqueta del botón
-    toggleBtn.addEventListener('click', () => {
-      if (currentLang === 'en') {
-        applyTranslations('es');
-        toggleBtn.textContent = 'EN';
-        currentLang = 'es';
-      } else {
-        applyTranslations('en');
-        toggleBtn.textContent = 'ES';
-        currentLang = 'en';
-      }
+    let currentLang = "es";
+    const toggleBtn = document.getElementById("toggle-lang");
+    toggleBtn.textContent = "EN";
+    toggleBtn.addEventListener("click", () => {
+      currentLang = currentLang === "es" ? "en" : "es";
+      applyTranslations(currentLang);
+      toggleBtn.textContent = currentLang === "es" ? "EN" : "ES";
     });
   </script>
+  -->
 
 </body>
 </html>
-
-
