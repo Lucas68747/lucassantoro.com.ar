@@ -169,8 +169,9 @@ button:focus-visible {
   .project-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* Con dos proyectos visibles: dos columnas centradas. Con tres, volver a repeat(3, 1fr) sin max-width. */
 @media (min-width: 1000px) {
-  .project-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .project-grid { gap: 28px; max-width: 880px; margin-inline: auto; }
 }
 
 .project-card {

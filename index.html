@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 
 <body>
@@ -50,8 +50,8 @@
       <div class="container narrow">
         <h2 id="about-title" class="section-title" data-i18n="about_title">Sobre mí</h2>
         <div class="about-text">
-          <p data-i18n="about_p1">Aprendo tecnología construyendo cosas. La mayor parte de lo que sé viene de proyectos personales: tomo un problema real, armo una solución que funcione, la documento y la sigo mejorando a medida que aprendo.</p>
-          <p data-i18n="about_p2">Hoy estoy enfocado en Python, AWS e infraestructura sobre Linux: desplegar y mantener mis propios servicios, y aprender en el camino las herramientas que los rodean, como Git y Docker.</p>
+          <p data-i18n="about_p1">Aprendo tecnología construyendo cosas. La mayor parte de lo que sé viene de proyectos personales: tomo un problema real, armo una solución funcional, la documento y la sigo mejorando a medida que aprendo.</p>
+          <p data-i18n="about_p2">Hoy estoy enfocado en el cloud computing, sobre todo en AWS, junto con Python y Linux: desplegar y mantener mis propios servicios, y aprender en el camino las herramientas que los rodean, como Git y Docker.</p>
         </div>
       </div>
     </section>
@@ -66,7 +66,8 @@
 
         <div class="project-grid">
 
-          <!-- zomboid-cloud-project -->
+          <!-- zomboid-cloud-project: oculto hasta que el proyecto esté terminado.
+               Para mostrarlo, sacar este comentario y volver a 3 columnas en .project-grid (styles.css).
           <article class="project-card">
             <div class="project-media project-media--placeholder" aria-hidden="true">
               <span>zomboid-cloud-project</span>
@@ -76,39 +77,36 @@
                 <span class="status status--progress" data-i18n="status_progress">En desarrollo</span>
               </div>
               <h3 class="project-title">zomboid-cloud-project</h3>
-              <!-- Descripción y tecnologías: pendientes, a completar cuando el repositorio sea público.
+              [Pendiente: descripción y tecnologías, cuando el repositorio sea público]
               <p class="project-desc"></p>
               <p class="project-tech"><span class="sr-only">Tecnologías: </span></p>
-              -->
               <p class="project-desc project-desc--muted" data-i18n="proj_zomboid_note">Repositorio privado por el momento.</p>
-              <!-- Enlace pendiente:
+              [Pendiente: enlace al repositorio]
               <div class="project-actions">
                 <a class="btn" href="https://github.com/Lucas68747/zomboid-cloud-project" target="_blank" rel="noopener">Repositorio<span class="sr-only"> de zomboid-cloud-project en GitHub</span></a>
               </div>
-              -->
             </div>
           </article>
+          -->
 
           <!-- IngresosApp-Web -->
           <article class="project-card">
             <div class="project-media">
-              <img src="img/projects/ingresosapp-web.webp" alt="Página de inicio de IngresosApp Web, con un carrusel de imágenes y el botón de descarga" width="900" height="600" loading="lazy" decoding="async" />
+              <img src="img/projects/ingresosapp-web.webp" alt="Página de inicio de IngresosApp Web: banner azul noche con la patente V 2.0 y los botones de descarga para Windows y Linux" width="900" height="600" loading="lazy" decoding="async" />
             </div>
             <div class="project-body">
               <div class="project-meta">
-                <span class="status status--progress" data-i18n="status_progress">En desarrollo</span>
+                <span class="status status--done" data-i18n="status_done">Completado</span>
               </div>
               <h3 class="project-title">IngresosApp-Web</h3>
-              <p class="project-desc" data-i18n="proj_web_desc">Sitio web de IngresosApp, con la descarga de la aplicación y su historial de versiones. Desplegado en una instancia EC2 de AWS con Linux, Nginx y Gunicorn.</p>
-              <p class="project-tech"><span class="sr-only">Tecnologías: </span>Python · Flask · Bootstrap · AWS EC2 · Nginx</p>
+              <p class="project-desc" data-i18n="proj_web_desc">Sitio web de IngresosApp, con la descarga de todas las versiones. Empezó en una instancia EC2 de AWS con Nginx y Gunicorn, y lo migré a un sitio estático en GitHub Pages, con dominio propio y DNS en Cloudflare.</p>
+              <p class="project-tech"><span class="sr-only">Tecnologías: </span>HTML · CSS · GitHub Pages · Cloudflare · antes AWS EC2</p>
               <div class="project-actions">
                 <a class="btn" href="https://github.com/Lucas68747/IngresosApp-Web" target="_blank" rel="noopener">
                   <svg class="btn-icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
                   Repositorio<span class="sr-only"> de IngresosApp-Web en GitHub</span>
                 </a>
-                <!-- Sitio fuera de línea (oct. 2026): reactivar cuando vuelva a estar publicado.
                 <a class="btn btn--ghost" href="https://www.ingresosapp.com.ar/" target="_blank" rel="noopener">Sitio web<span class="sr-only"> de IngresosApp</span></a>
-                -->
               </div>
             </div>
           </article>
@@ -116,20 +114,21 @@
           <!-- IngresosApp -->
           <article class="project-card">
             <div class="project-media">
-              <img src="img/projects/ingresosapp.webp" alt="Ventana de IngresosApp con el formulario de carga y la tabla de ingresos registrados" width="900" height="600" loading="lazy" decoding="async" />
+              <img src="img/projects/ingresosapp.webp" alt="Ventana de IngresosApp 2.0 con el formulario de un nuevo ingreso, la ficha de la agenda y la lista de quienes están adentro" width="900" height="600" loading="lazy" decoding="async" />
             </div>
             <div class="project-body">
               <div class="project-meta">
                 <span class="status status--done" data-i18n="status_done">Completado</span>
               </div>
               <h3 class="project-title">IngresosApp</h3>
-              <p class="project-desc" data-i18n="proj_app_desc">Aplicación de escritorio para registrar los ingresos a un predio privado, como un barrio cerrado o un parque industrial. Permite cargar, editar y eliminar registros y exportarlos a PDF.</p>
-              <p class="project-tech"><span class="sr-only">Tecnologías: </span>Python · Tkinter · SQLite · FPDF</p>
+              <p class="project-desc" data-i18n="proj_app_desc">Aplicación de escritorio para registrar ingresos y salidas en barrios cerrados, parques industriales y otros predios. Guardia de turno, agenda, historial sin borrados, reportes en PDF y envío por correo. Se compila y publica con GitHub Actions.</p>
+              <p class="project-tech"><span class="sr-only">Tecnologías: </span>Python · Tkinter · SQLite · fpdf2 · GitHub Actions</p>
               <div class="project-actions">
                 <a class="btn" href="https://github.com/Lucas68747/IngresosApp" target="_blank" rel="noopener">
                   <svg class="btn-icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
                   Repositorio<span class="sr-only"> de IngresosApp en GitHub</span>
                 </a>
+                <a class="btn btn--ghost" href="https://www.ingresosapp.com.ar/#descargas" target="_blank" rel="noopener">Descargar<span class="sr-only"> IngresosApp</span></a>
               </div>
             </div>
           </article>
@@ -173,28 +172,28 @@
     const translations = {
       es: {
         about_title: "Sobre mí",
-        about_p1: "Aprendo tecnología construyendo cosas. La mayor parte de lo que sé viene de proyectos personales: tomo un problema real, armo una solución que funcione, la documento y la sigo mejorando a medida que aprendo.",
-        about_p2: "Hoy estoy enfocado en Python, AWS e infraestructura sobre Linux: desplegar y mantener mis propios servicios, y aprender en el camino las herramientas que los rodean, como Git y Docker.",
+        about_p1: "Aprendo tecnología construyendo cosas. La mayor parte de lo que sé viene de proyectos personales: tomo un problema real, armo una solución funcional, la documento y la sigo mejorando a medida que aprendo.",
+        about_p2: "Hoy estoy enfocado en el cloud computing, sobre todo en AWS, junto con Python y Linux: desplegar y mantener mis propios servicios, y aprender en el camino las herramientas que los rodean, como Git y Docker.",
         projects_title: "Proyectos",
         projects_intro: "Proyectos personales en los que trabajé o estoy trabajando. El código y la documentación de cada uno están en GitHub.",
         status_progress: "En desarrollo",
         status_done: "Completado",
         proj_zomboid_note: "Repositorio privado por el momento.",
-        proj_web_desc: "Sitio web de IngresosApp, con la descarga de la aplicación y su historial de versiones. Desplegado en una instancia EC2 de AWS con Linux, Nginx y Gunicorn.",
-        proj_app_desc: "Aplicación de escritorio para registrar los ingresos a un predio privado, como un barrio cerrado o un parque industrial. Permite cargar, editar y eliminar registros y exportarlos a PDF.",
+        proj_web_desc: "Sitio web de IngresosApp, con la descarga de todas las versiones. Empezó en una instancia EC2 de AWS con Nginx y Gunicorn, y lo migré a un sitio estático en GitHub Pages, con dominio propio y DNS en Cloudflare.",
+        proj_app_desc: "Aplicación de escritorio para registrar ingresos y salidas en barrios cerrados, parques industriales y otros predios. Guardia de turno, agenda, historial sin borrados, reportes en PDF y envío por correo. Se compila y publica con GitHub Actions.",
         footer_findme: "Encontrame en:"
       },
       en: {
         about_title: "About me",
-        about_p1: "I learn technology by building things. Most of what I know comes from personal projects: I take a real problem, build a solution that works, document it and keep improving it as I learn.",
-        about_p2: "Right now I'm focused on Python, AWS and Linux-based infrastructure: deploying and running my own services, and learning the tools around them along the way, such as Git and Docker.",
+        about_p1: "I learn technology by building things. Most of what I know comes from personal projects: I take a real problem, build a working solution, document it and keep improving it as I learn.",
+        about_p2: "Right now I'm focused on cloud computing, especially AWS, along with Python and Linux: deploying and running my own services, and learning the tools around them along the way, such as Git and Docker.",
         projects_title: "Projects",
         projects_intro: "Personal projects I've worked on or am working on. The code and documentation for each one are on GitHub.",
         status_progress: "In progress",
         status_done: "Completed",
         proj_zomboid_note: "Private repository for now.",
-        proj_web_desc: "Website for IngresosApp, with the app download and its version history. Deployed on an AWS EC2 instance with Linux, Nginx and Gunicorn.",
-        proj_app_desc: "Desktop app to log entries to a private property, such as a gated community or an industrial park. It lets you add, edit and delete records and export them to PDF.",
+        proj_web_desc: "Website for IngresosApp, with downloads for every version. It started on an AWS EC2 instance with Nginx and Gunicorn, and I migrated it to a static site on GitHub Pages, with its own domain and DNS on Cloudflare.",
+        proj_app_desc: "Desktop app to log entries and exits at gated communities, industrial parks and other private sites. Guard shifts, a contact book, history with no deletions, PDF reports and email delivery. Built and released with GitHub Actions.",
         footer_findme: "Find me on:"
       }
     };
